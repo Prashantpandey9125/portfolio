@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prashant Pandey | Developer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 70px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(15,23,42,0.75);
+backdrop-filter:blur(12px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+font-weight:700;
+font-size:22px;
+letter-spacing:1px;
+background:linear-gradient(90deg,#38bdf8,#22c55e);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+nav a{
+color:#e2e8f0;
+margin-left:28px;
+text-decoration:none;
+font-weight:500;
+position:relative;
+transition:0.3s;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+background:#38bdf8;
+bottom:-6px;
+left:0;
+transition:0.4s;
+}
+
+nav a:hover{
+color:white;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(120deg,#020617,#0f172a,#1e293b);
+}
+
+.hero h1{
+font-size:72px;
+font-weight:700;
+}
+
+.hero span{
+background:linear-gradient(90deg,#38bdf8,#22c55e);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.typing{
+margin-top:15px;
+font-size:22px;
+color:#cbd5f5;
+min-height:28px;
+}
+
+.btn{
+display:inline-block;
+margin:14px;
+padding:12px 30px;
+border-radius:40px;
+background:linear-gradient(90deg,#38bdf8,#22c55e);
+color:black;
+font-weight:600;
+text-decoration:none;
+transition:0.35s;
+}
+
+.btn:hover{
+transform:translateY(-4px) scale(1.05);
+box-shadow:0 10px 25px rgba(56,189,248,0.4);
+}
+
+/* SECTIONS */
+section{
+padding:130px 120px;
+}
+
+.section-title{
+font-size:44px;
+text-align:center;
+margin-bottom:60px;
+font-weight:700;
+position:relative;
+}
+
+.section-title::after{
+content:"";
+width:90px;
+height:4px;
+background:linear-gradient(90deg,#38bdf8,#22c55e);
+position:absolute;
+bottom:-12px;
+left:50%;
+transform:translateX(-50%);
+border-radius:10px;
+}
+
+/* ABOUT */
+.about{
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:1.8;
+font-size:17px;
+color:#cbd5f5;
+}
+
+/* SKILLS */
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+.skill{
+padding:26px;
+border-radius:14px;
+background:#1e293b;
+text-align:center;
+transition:0.35s;
+position:relative;
+overflow:hidden;
+}
+
+.skill::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+top:-100%;
+left:0;
+background:linear-gradient(180deg,transparent,#38bdf8);
+transition:0.5s;
+opacity:0.15;
+}
+
+.skill:hover::before{
+top:0;
+}
+
+.skill:hover{
+transform:translateY(-12px);
+}
+
+/* PROJECT */
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.project{
+background:#1e293b;
+padding:28px;
+border-radius:16px;
+transition:0.4s;
+position:relative;
+}
+
+.project:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.project h3{
+margin-bottom:12px;
+}
+
+.project p{
+color:#cbd5f5;
+font-size:15px;
+line-height:1.6;
+}
+
+/* CONTACT */
+.contact{
+text-align:center;
+font-size:17px;
+color:#cbd5f5;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#020617;
+color:#94a3b8;
+}
+
+/* REVEAL ANIMATION */
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">My Portfolio</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Project</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<h1>Hi, I'm <span>Prashant Pandey</span></h1>
+<div class="typing" id="typing"></div>
+
+<a href="https://github.com/prashantpandey9125" target="_blank" rel="noopener" class="btn">Open My GitHub Profile</a>
+<a href="#projects" class="btn">My Project</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+<h2 class="section-title">About Me</h2>
+<p class="about">
+I am Prashant Pandey, a BCA student at KIPM College of Management, Gorakhpur. I enjoy building web applications and learning modern technologies. Currently I am working on projects and preparing for NIMCET to pursue MCA in top NITs.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+<h2 class="section-title">Skills</h2>
+<div class="skills-grid">
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Python</div>
+<div class="skill">NUMPY</div>
+<div class="skill">PANDAS</div>
+<div class="skill">SQL</div>
+<div class="skill">Data visualization</div>
+
+</div>
+</section>
+
+<!-- PROJECT -->
+<section id="projects" class="reveal">
+<h2 class="section-title">Project</h2>
+<div class="projects-grid">
+<div class="project">
+<h3>NIMCET Preparation Website</h3>
+<p>
+A complete online learning platform for NIMCET aspirants providing study materials, practice tests and previous year questions.
+</p>
+<br>
+<a href="https://celadon-sunshine-8b2943.netlify.app/" target="_blank" rel="noopener" class="btn">Open Live Project</a>
+<a href="https://github.com/prashantpandey9125" target="_blank" rel="noopener" class="btn">View Project Code</a>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+<h2 class="section-title">Let's Connect</h2>
+<div class="contact" style="max-width:700px;margin:auto;background:#1e293b;padding:40px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.4)">
+<p style="font-size:18px;margin-bottom:15px">Interested in collaborating, building projects or discussing tech?</p>
+<p style="margin-bottom:10px"><strong>Email:</strong>pandeyprashant9125@gmail.com</p>
+<p style="margin-bottom:10px"><strong>Location:</strong>Gorakhpur,uttarpradesh</p>
+<br>
+<a href="https://github.com/prashantpandey9125" target="_blank" class="btn">Visit My GitHub</a>
+</div>
+</section>
+
+<footer>
+<p>Prashant Pandey | Developer Portfolio</p>
+</footer>
+
+<script>
+
+/* SCROLL REVEAL */
+function reveal(){
+var reveals=document.querySelectorAll(".reveal");
+for(var i=0;i<reveals.length;i++){
+var windowHeight=window.innerHeight;
+var elementTop=reveals[i].getBoundingClientRect().top;
+var elementVisible=100;
+if(elementTop<windowHeight-elementVisible){
+reveals[i].classList.add("active");
+}
+}
+}
+window.addEventListener("scroll",reveal);
+
+/* TYPING ANIMATION */
+const text=["Aspiring Data Science"];
+let count=0;
+let index=0;
+let currentText="";
+let letter="";
+
+(function type(){
+if(count===text.length){count=0}
+currentText=text[count]
+letter=currentText.slice(0,++index)
+document.getElementById("typing").textContent=letter
+if(letter.length===currentText.length){count++;index=0;setTimeout(type,1000)}
+else{setTimeout(type,80)}
+})();
+
+</script>
+
+</body>
+</html>
